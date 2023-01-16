@@ -100,7 +100,7 @@ hr {
 
 .overflow {
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .img-div {
@@ -122,15 +122,19 @@ hr {
 
 /*********************** JS styles ***********************/
 
-.hidden {
+.faq .answer {
   display: none;
 }
 
-.bold{
+.active .answer{
+  display: block;
+}
+
+.active h2{
   font-weight: 700;
 }
 
-.rotate{
+.active img{
   transform: rotate(180deg);
 }
 
