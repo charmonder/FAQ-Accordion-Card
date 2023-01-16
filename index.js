@@ -1,26 +1,11 @@
 
-$("h2").click(function(){
+document.querySelectorAll(".question").forEach((question) => question.addEventListener("click", () => {
 
-  var userClick = $(this).attr("id");
-  boldText (userClick);
-  toggleHidden (userClick);
-  toggleButton (userClick);
+  if (question.parentNode.classList.contains("active")) {
+    question.parentNode.classList.toggle("active");
+  } else {
+    document.querySelectorAll(".question").forEach(question => question.parentNode.classList.remove("active"));
+    question.parentNode.classList.add("active");
+  }
 
-});
-
-
-
-function boldText (name){
-  var text = $("h2#" + name);
-  text.toggleClass("bold");
-}
-
-function toggleHidden (name){
-  var par = document.querySelector(".q" + name + " p");
-  par.classList.toggle("hidden");
-}
-
-function toggleButton (name){
-  var img = document.querySelector(".q" + name + " img");
-  img.classList.toggle("rotate");
-}
+}));
